@@ -1,55 +1,105 @@
 <!doctype html>
 <html lang="it">
 <head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-LLK08HY5D6"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-LLK08HY5D6"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-LLK08HY5D6');
+  </script>
 
-  gtag('config', 'G-LLK08HY5D6');
-</script>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Itinerari di viaggio — Indice</title>
 
-  <!-- Stili ispirati alla pagina indicata -->
   <style>
     :root{
-      --accent:#0b5ed7;
-      --accent-dark:#084bb0;
-      --bg:#0f1724;
-      --card:#0b1220;
-      --muted:#9aa6bf;
-      --radius:8px;
-      --maxw:980px;
+      --maxw:1100px;
+      --accent:#1b6fb3;
+      --muted:#6b7280;
+      --card-bg:#ffffff;
+      --page-bg:#f6f7f9;
+      --radius:10px;
+      --gap:14px;
+      --sidew:432px;
+      --map-h:312px;
+      --map-large-h:432px;
     }
-    html,body{height:100%;margin:0;font-family:Inter, "Segoe UI", Roboto, Arial, sans-serif;background:linear-gradient(180deg,#071026 0%, #0b1220 60%);color:#e6eef8;}
-    .wrap{max-width:var(--maxw);margin:36px auto;padding:28px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border-radius:12px;box-shadow:0 6px 30px rgba(2,6,23,0.6);}
-    header{display:flex;align-items:center;gap:18px;margin-bottom:18px;}
-    .logo{
-      width:72px;height:72px;border-radius:10px;background:linear-gradient(135deg,var(--accent),var(--accent-dark));display:flex;align-items:center;justify-content:center;font-weight:700;color:#fff;font-size:20px;box-shadow:0 6px 18px rgba(11,94,215,0.18);
-    }
-    h1{font-size:28px;margin:0 0 4px 0;letter-spacing:-0.4px;}
-    p.lead{margin:0;color:var(--muted);font-size:14px;}
-    nav.topnav{margin-top:18px;display:flex;gap:10px;flex-wrap:wrap;}
-    nav.topnav a{background:transparent;border:1px solid rgba(255,255,255,0.06);color:#dff0ff;padding:8px 12px;border-radius:8px;text-decoration:none;font-weight:600;transition:all .15s;}
-    nav.topnav a:hover{background:rgba(255,255,255,0.03);border-color:rgba(255,255,255,0.12);transform:translateY(-2px);}
 
-    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin-top:22px;}
-    .card{background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.00));border:1px solid rgba(255,255,255,0.03);padding:18px;border-radius:var(--radius);min-height:120px;display:flex;flex-direction:column;justify-content:space-between;}
-    .card h3{margin:0;color:#fff;font-size:18px;}
-    .card p{margin:8px 0 0 0;color:var(--muted);font-size:13px;}
-    .card .btn{margin-top:12px;display:inline-block;background:var(--accent);color:#fff;padding:8px 12px;border-radius:8px;text-decoration:none;font-weight:700;}
-    footer{margin-top:26px;color:var(--muted);font-size:13px;border-top:1px dashed rgba(255,255,255,0.03);padding-top:14px;}
-    @media (max-width:520px){header{flex-direction:column;align-items:flex-start}.logo{width:56px;height:56px}}
+    html,body{height:100%;margin:0;font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; background:var(--page-bg); color:#111;}
+    header{background:linear-gradient(90deg,#fff,#f0fbff);border-bottom:1px solid #e6eef6;padding:28px 18px;text-align:center}
+    header h1{margin:0;font-size:28px;color:var(--accent)}
+    header p{margin:8px 0 0;color:var(--muted)}
+    main{max-width:var(--maxw);margin:26px auto;padding:0 18px 60px}
+    .card{background:var(--card-bg);border-radius:var(--radius);box-shadow:0 6px 18px rgba(20,20,30,0.05);padding:16px;margin-bottom:18px}
+    table.toc{width:100%;border-collapse:collapse;margin-top:8px}
+    table.toc th, table.toc td{border:1px solid #eef3f7;padding:8px;text-align:left;font-size:14px}
+    table.toc th{background:#fbfdff;color:#0b4f7a}
+    .day{margin:22px 0;padding:16px;border-radius:var(--radius);background:var(--card-bg);box-shadow:0 6px 18px rgba(20,20,30,0.04)}
+    .day h2{margin:0 0 6px;color:#123a57;font-size:20px}
+    .date{color:#0b4f7a;font-weight:700;margin-bottom:6px}
+    .meta{color:var(--muted);font-size:14px;margin-bottom:10px}
+    /* Updated grid and card styles to make the two middle boxes symmetric */
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(2, minmax(0, 1fr));
+      gap:var(--gap);
+      align-items:stretch;
+      justify-items:stretch;
+    }
+    .card{
+      background:var(--card-bg);
+      border-radius:var(--radius);
+      box-shadow:0 6px 18px rgba(20,20,30,0.05);
+      padding:16px;
+      margin:0; /* remove bottom margin so both align */
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+      height:100%;
+    }
+    .map{height:var(--map-h);border-radius:8px;overflow:hidden;border:1px solid #e6eef6}
+    .map-large{height:var(--map-large-h);border-radius:8px;overflow:hidden;border:1px solid #e6eef6;margin-top:12px}
+    .program{margin-top:8px}
+    .program h4{margin:8px 0 6px;font-size:16px;color:#0b4f7a}
+    .program ul{margin:0 0 8px 18px;color:#333}
+    .visit-list{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:10px}
+    .visit{background:#fbfdff;border:1px solid #eef6fb;padding:10px;border-radius:8px}
+    .visit strong{display:block;color:#0b4f7a;margin-bottom:6px}
+    .visit p{margin:0;color:#333;font-size:14px}
+    .visit a{color:var(--accent);text-decoration:none;font-size:13px;margin-left:6px}
+    .links {margin-top:8px}
+    .back-link{display:block;margin-top:10px;font-size:13px}
+    .sleep{margin-top:10px;padding:10px;border-radius:8px;background:#fff8e6;color:#6b4a00;font-weight:700}
+    footer{margin-top:30px;text-align:center;color:var(--muted);font-size:14px;padding-bottom:40px}
+    hr{border:0;border-top:1px solid #eef3f7;margin:22px 0}
+
+    /* Button/link styling and alignment inside cards */
+    .btn{
+      display:inline-block;
+      margin-left:auto;
+      margin-top:12px;
+      text-decoration:none;
+      color:var(--accent);
+      font-weight:600;
+      padding:8px 12px;
+      border-radius:8px;
+      border:1px solid rgba(27,111,179,0.12);
+      background:linear-gradient(180deg, rgba(27,111,179,0.06), transparent);
+    }
+
+    @media (max-width:980px){
+      :root{--sidew:360px}
+      .grid{grid-template-columns:1fr}
+      .visit-list{grid-template-columns:1fr}
+    }
   </style>
 </head>
 <body>
   <div class="wrap">
     <header>
-      <div class="logo">IT</div>
       <div>
         <h1>Itinerari di viaggio</h1>
         <p class="lead">Seleziona l'itinerario per visualizzare il programma giorno per giorno.</p>
@@ -57,33 +107,34 @@
     </header>
 
     <!-- Barra di navigazione principale -->
-    <nav class="topnav" aria-label="Navigazione principale">
-      <a href="index.html" aria-current="page">Indice</a>
-      <a href="giappone.html">Giappone</a>
-      <a href="thailanda_cambogia.html">Thailandia e Cambogia</a>
+    <nav class="topnav" aria-label="Navigazione principale" style="padding:12px 18px; text-align:center; background:transparent;">
+      <a href="index.html" aria-current="page" style="margin-right:12px; color:var(--accent); text-decoration:none;">Indice</a>
+      <a href="giappone.html" style="margin-right:12px; color:#333; text-decoration:none;">Giappone</a>
+      <a href="thailanda_cambogia.html" style="color:#333; text-decoration:none;">Thailandia e Cambogia</a>
     </nav>
 
     <main>
       <div class="grid" role="list">
         <article class="card" role="listitem">
           <div>
-            <h3>Giappone</h3>
-            <p>Itinerario dettagliato giorno per giorno per Tokyo, Kanazawa, Kyoto e altro.</p>
+            <h3 style="margin:0 0 8px;">Giappone</h3>
+            <p style="margin:0 0 12px;">Itinerario dettagliato giorno per giorno per Tokyo, Kanazawa, Kyoto e altro.</p>
           </div>
           <a class="btn" href="giappone.html">Apri pagina</a>
         </article>
 
         <article class="card" role="listitem">
           <div>
-            <h3>Thailandia e Cambogia</h3>
-            <p>Itinerario dettagliato giorno per giorno per Bangkok, Angkor e Koh Samui.</p>
+            <h3 style="margin:0 0 8px;">Thailandia e Cambogia</h3>
+            <p style="margin:0 0 12px;">Itinerario dettagliato giorno per giorno per Bangkok, Angkor e Koh Samui.</p>
           </div>
           <a class="btn" href="thailanda_cambogia.html">Apri pagina</a>
         </article>
       </div>
+
       <footer>
-      <p>Documento generato il 22/02/2026 alle ore 20:45:00</p>
-    </footer>
+        <p>Documento generato il 22/02/2026 alle ore 20:45:00</p>
+      </footer>
     </main>
   </div>
 </body>
