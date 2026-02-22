@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="it">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LLK08HY5D6"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-LLK08HY5D6');
+</script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Itinerari di viaggio — Indice</title>
+
+  <!-- Stili ispirati alla pagina indicata -->
+  <style>
+    :root{
+      --accent:#0b5ed7;
+      --accent-dark:#084bb0;
+      --bg:#0f1724;
+      --card:#0b1220;
+      --muted:#9aa6bf;
+      --radius:8px;
+      --maxw:980px;
+    }
+    html,body{height:100%;margin:0;font-family:Inter, "Segoe UI", Roboto, Arial, sans-serif;background:linear-gradient(180deg,#071026 0%, #0b1220 60%);color:#e6eef8;}
+    .wrap{max-width:var(--maxw);margin:36px auto;padding:28px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border-radius:12px;box-shadow:0 6px 30px rgba(2,6,23,0.6);}
+    header{display:flex;align-items:center;gap:18px;margin-bottom:18px;}
+    .logo{
+      width:72px;height:72px;border-radius:10px;background:linear-gradient(135deg,var(--accent),var(--accent-dark));display:flex;align-items:center;justify-content:center;font-weight:700;color:#fff;font-size:20px;box-shadow:0 6px 18px rgba(11,94,215,0.18);
+    }
+    h1{font-size:28px;margin:0 0 4px 0;letter-spacing:-0.4px;}
+    p.lead{margin:0;color:var(--muted);font-size:14px;}
+    nav.topnav{margin-top:18px;display:flex;gap:10px;flex-wrap:wrap;}
+    nav.topnav a{background:transparent;border:1px solid rgba(255,255,255,0.06);color:#dff0ff;padding:8px 12px;border-radius:8px;text-decoration:none;font-weight:600;transition:all .15s;}
+    nav.topnav a:hover{background:rgba(255,255,255,0.03);border-color:rgba(255,255,255,0.12);transform:translateY(-2px);}
+
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin-top:22px;}
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.00));border:1px solid rgba(255,255,255,0.03);padding:18px;border-radius:var(--radius);min-height:120px;display:flex;flex-direction:column;justify-content:space-between;}
+    .card h3{margin:0;color:#fff;font-size:18px;}
+    .card p{margin:8px 0 0 0;color:var(--muted);font-size:13px;}
+    .card .btn{margin-top:12px;display:inline-block;background:var(--accent);color:#fff;padding:8px 12px;border-radius:8px;text-decoration:none;font-weight:700;}
+    footer{margin-top:26px;color:var(--muted);font-size:13px;border-top:1px dashed rgba(255,255,255,0.03);padding-top:14px;}
+    @media (max-width:520px){header{flex-direction:column;align-items:flex-start}.logo{width:56px;height:56px}}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="logo">IT</div>
+      <div>
+        <h1>Itinerari di viaggio</h1>
+        <p class="lead">Seleziona l'itinerario per visualizzare il programma giorno per giorno.</p>
+      </div>
+    </header>
+
+    <!-- Barra di navigazione principale -->
+    <nav class="topnav" aria-label="Navigazione principale">
+      <a href="index.html" aria-current="page">Indice</a>
+      <a href="giappone.html">Giappone</a>
+      <a href="thailanda_cambogia.html">Thailandia e Cambogia</a>
+    </nav>
+
+    <main>
+      <div class="grid" role="list">
+        <article class="card" role="listitem">
+          <div>
+            <h3>Giappone</h3>
+            <p>Itinerario dettagliato giorno per giorno per Tokyo, Kanazawa, Kyoto e altro.</p>
+          </div>
+          <a class="btn" href="giappone.html">Apri pagina</a>
+        </article>
+
+        <article class="card" role="listitem">
+          <div>
+            <h3>Thailandia e Cambogia</h3>
+            <p>Itinerario consigliato per Bangkok, Chiang Mai, Angkor e le principali attrazioni.</p>
+          </div>
+          <a class="btn" href="thailanda_cambogia.html">Apri pagina</a>
+        </article>
+      </div>
+    </main>
+
+    <footer>
+      <div><strong>Nota</strong>: assicurati che i file <code>giappone.html</code> e <code>thailanda_cambogia.html</code> siano nella stessa cartella di questo file.</div>
+    </footer>
+  </div>
+</body>
+</html>
