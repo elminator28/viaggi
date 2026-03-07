@@ -1,141 +1,227 @@
 <!doctype html>
 <html lang="it">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LLK08HY5D6"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-LLK08HY5D6');
+</script>
 <head>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-LLK08HY5D6"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-LLK08HY5D6');
-  </script>
-
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Itinerari di viaggio — Indice</title>
-
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Thailandia e Cambogia</title>
   <style>
-    :root{
-      --maxw:1100px;
-      --accent:#1b6fb3;
-      --muted:#6b7280;
-      --card-bg:#ffffff;
-      --page-bg:#f6f7f9;
-      --radius:10px;
-      --gap:14px;
-      --sidew:432px;
-      --map-h:312px;
-      --map-large-h:432px;
+    :root{--accent:#00695c;--bg:#f7f7f8;--card:#fff;--muted:#666}
+    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;margin:0;padding:0;background:var(--bg);color:#111}
+    .wrap{max-width:920px;margin:0 auto;padding:18px}
+    header{background:var(--accent);color:#fff;padding:14px;border-radius:8px}
+    h1{font-size:18px;margin:0}
+    section{background:var(--card);border-radius:8px;padding:12px;margin-top:12px;box-shadow:0 1px 2px rgba(0,0,0,0.06)}
+    table{width:100%;border-collapse:collapse;font-size:15px;table-layout:auto}
+    th,td{padding:10px 8px;border-bottom:1px solid #eee;text-align:left;vertical-align:top}
+    th{background:#f1f6f5;font-weight:700}
+    a{color:var(--accent);word-break:break-word}
+    .muted{font-size:13px;color:var(--muted)}
+    /* Make the Data column wider and prevent it from wrapping */
+    thead th:nth-child(2), tbody td:nth-child(2){
+      width:200px;
+      min-width:200px;
+      white-space:nowrap;
     }
-
-    html,body{height:100%;margin:0;font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; background:var(--page-bg); color:#111;}
-    header{background:linear-gradient(90deg,#fff,#f0fbff);border-bottom:1px solid #e6eef6;padding:28px 18px;text-align:center}
-    header h1{margin:0;font-size:28px;color:var(--accent)}
-    header p{margin:8px 0 0;color:var(--muted)}
-    main{max-width:var(--maxw);margin:26px auto;padding:0 18px 60px}
-    .card{background:var(--card-bg);border-radius:var(--radius);box-shadow:0 6px 18px rgba(20,20,30,0.05);padding:16px;margin-bottom:18px}
-    table.toc{width:100%;border-collapse:collapse;margin-top:8px}
-    table.toc th, table.toc td{border:1px solid #eef3f7;padding:8px;text-align:left;font-size:14px}
-    table.toc th{background:#fbfdff;color:#0b4f7a}
-    .day{margin:22px 0;padding:16px;border-radius:var(--radius);background:var(--card-bg);box-shadow:0 6px 18px rgba(20,20,30,0.04)}
-    .day h2{margin:0 0 6px;color:#123a57;font-size:20px}
-    .date{color:#0b4f7a;font-weight:700;margin-bottom:6px}
-    .meta{color:var(--muted);font-size:14px;margin-bottom:10px}
-    /* Updated grid and card styles to make the two middle boxes symmetric */
-    .grid{
-      display:grid;
-      grid-template-columns:repeat(2, minmax(0, 1fr));
-      gap:var(--gap);
-      align-items:stretch;
-      justify-items:stretch;
+    /* Allow Visite column to wrap and take remaining space */
+    thead th:nth-child(4), tbody td:nth-child(4){
+      white-space:normal;
+      word-break:break-word;
     }
-    .card{
-      background:var(--card-bg);
-      border-radius:var(--radius);
-      box-shadow:0 6px 18px rgba(20,20,30,0.05);
-      padding:16px;
-      margin:0; /* remove bottom margin so both align */
-      display:flex;
-      flex-direction:column;
-      justify-content:space-between;
-      height:100%;
+    /* Ensure other columns can wrap if needed but keep them compact */
+    thead th:nth-child(1), tbody td:nth-child(1),
+    thead th:nth-child(3), tbody td:nth-child(3),
+    thead th:nth-child(5), tbody td:nth-child(5){
+      white-space:normal;
     }
-    .map{height:var(--map-h);border-radius:8px;overflow:hidden;border:1px solid #e6eef6}
-    .map-large{height:var(--map-large-h);border-radius:8px;overflow:hidden;border:1px solid #e6eef6;margin-top:12px}
-    .program{margin-top:8px}
-    .program h4{margin:8px 0 6px;font-size:16px;color:#0b4f7a}
-    .program ul{margin:0 0 8px 18px;color:#333}
-    .visit-list{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:10px}
-    .visit{background:#fbfdff;border:1px solid #eef6fb;padding:10px;border-radius:8px}
-    .visit strong{display:block;color:#0b4f7a;margin-bottom:6px}
-    .visit p{margin:0;color:#333;font-size:14px}
-    .visit a{color:var(--accent);text-decoration:none;font-size:13px;margin-left:6px}
-    .links {margin-top:8px}
-    .back-link{display:block;margin-top:10px;font-size:13px}
-    .sleep{margin-top:10px;padding:10px;border-radius:8px;background:#fff8e6;color:#6b4a00;font-weight:700}
-    footer{margin-top:30px;text-align:center;color:var(--muted);font-size:14px;padding-bottom:40px}
-    hr{border:0;border-top:1px solid #eef3f7;margin:22px 0}
-
-    /* Button/link styling and alignment inside cards */
-    .btn{
-      display:inline-block;
-      margin-left:auto;
-      margin-top:12px;
-      text-decoration:none;
-      color:var(--accent);
-      font-weight:600;
-      padding:8px 12px;
-      border-radius:8px;
-      border:1px solid rgba(27,111,179,0.12);
-      background:linear-gradient(180deg, rgba(27,111,179,0.06), transparent);
+    @media (max-width:720px){
+      thead th:nth-child(2), tbody td:nth-child(2){width:45%}
+      thead th:nth-child(4), tbody td:nth-child(4){width:40%}
     }
-
-    @media (max-width:980px){
-      :root{--sidew:360px}
-      .grid{grid-template-columns:1fr}
-      .visit-list{grid-template-columns:1fr}
+    @media (max-width:420px){
+      h1{font-size:16px}
+      th,td{padding:8px 6px;font-size:14px}
     }
   </style>
 </head>
 <body>
   <div class="wrap">
     <header>
-      <div>
-        <h1>Itinerari di viaggio</h1>
-        <p class="lead">Seleziona l'itinerario per visualizzare il programma giorno per giorno.</p>
-      </div>
+      <h1>Thailandia e Cambogia</h1>
     </header>
 
-    <!-- Barra di navigazione principale -->
-    <nav class="topnav" aria-label="Navigazione principale" style="padding:12px 18px; text-align:center; background:transparent;">
-      <a href="index.html" aria-current="page" style="margin-right:12px; color:var(--accent); text-decoration:none;">Indice</a>
-      <a href="giappone.html" style="margin-right:12px; color:#333; text-decoration:none;">Giappone</a>
-      <a href="thailanda_cambogia.html" style="color:#333; text-decoration:none;">Thailandia e Cambogia</a>
-    </nav>
+    <section aria-labelledby="voli">
+      <h2 id="voli" style="font-size:16px;margin:8px 0">Voli</h2>
+      <table role="table" aria-label="Voli">
+        <thead>
+          <tr>
+            <th>Data</th>
+            <th>Tratta</th>
+            <th>Compagnia</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>sabato 18 luglio 2026</td><td>MXP 14:05 - BKK 05:05</td><td>Thai</td></tr>
+          <tr><td>mercoledì 22 luglio 2026</td><td>DMK 13:30 - SAI 14:30</td><td>Air Asia</td></tr>
+          <tr><td>lunedì 27 luglio 2026</td><td>SAI 12:55 - BKK 14:25</td><td>Bangkok Airways</td></tr>
+          <tr><td>lunedì 27 luglio 2026</td><td>BKK 16:40 - USM 17:45</td><td>Bangkok Airways</td></tr>
+          <tr><td>sabato 1 agosto 2026</td><td>USM 15:25 - BKK 16:40</td><td>Bangkok Airways</td></tr>
+          <tr><td>domenica 2 agosto 2026</td><td>BKK 05:35 - MXP 12:40</td><td>Thai</td></tr>
+        </tbody>
+      </table>
+    </section>
 
-    <main>
-      <div class="grid" role="list">
-        <article class="card" role="listitem">
-          <div>
-            <h3 style="margin:0 0 8px;">Giappone</h3>
-            <p style="margin:0 0 12px;">Itinerario dettagliato giorno per giorno per Tokyo, Kanazawa, Kyoto e altro.</p>
-          </div>
-          <a class="btn" href="giappone.html">Apri pagina</a>
-        </article>
+    <section aria-labelledby="giorni">
+      <h2 id="giorni" style="font-size:16px;margin:8px 0">Giorno per giorno</h2>
+      <table role="table" aria-label="Tabella itinerario">
+        <thead>
+          <tr>
+            <th>Giorno</th>
+            <th>Data</th>
+            <th>Viaggio</th>
+            <th>Visite</th>
+            <th>Pernottamento</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>0</td>
+            <td>sabato 18 luglio 2026</td>
+            <td>Volo MXP‑BKK</td>
+            <td>Volo aereo</td>
+            <td></td>
+          </tr>
 
-        <article class="card" role="listitem">
-          <div>
-            <h3 style="margin:0 0 8px;">Thailandia e Cambogia</h3>
-            <p style="margin:0 0 12px;">Itinerario dettagliato giorno per giorno per Bangkok, Angkor e Koh Samui.</p>
-          </div>
-          <a class="btn" href="thailanda_cambogia.html">Apri pagina</a>
-        </article>
-      </div>
+          <tr>
+            <td>1</td>
+            <td>domenica 19 luglio 2026</td>
+            <td></td>
+            <td>Arrivo; battello pubblico o long‑tail al Tha Tien / Tha Tien–Wat Arun</td>
+            <td>Bangkok</td>
+          </tr>
 
-      <footer>
-        <p>Documento generato il 22/02/2026 alle ore 20:45:00</p>
-      </footer>
-    </main>
+          <tr>
+            <td>2</td>
+            <td>lunedì 20 luglio 2026</td>
+            <td></td>
+            <td>Grand Palace e Wat Phra Kaew; Wat Pho e Reclining Buddha; mercato e crociera sul Chao Phraya</td>
+            <td>Bangkok</td>
+          </tr>
+
+          <tr>
+            <td>3</td>
+            <td>martedì 21 luglio 2026</td>
+            <td></td>
+            <td>Jim Thompson House; shopping; museo o parco urbano</td>
+            <td>Bangkok</td>
+          </tr>
+
+          <tr>
+            <td>4</td>
+            <td>mercoledì 22 luglio 2026</td>
+            <td>Volo DMK‑SAI</td>
+            <td></td>
+            <td>Siem Reap</td>
+          </tr>
+
+          <tr>
+            <td>5</td>
+            <td>giovedì 23 luglio 2026</td>
+            <td></td>
+            <td>Alba ad Angkor Wat; Angkor Thom (Bayon); Ta Prohm</td>
+            <td>Siem Reap</td>
+          </tr>
+
+          <tr>
+            <td>6</td>
+            <td>venerdì 24 luglio 2026</td>
+            <td></td>
+            <td>Banteay Srei; Beng Mealea (tempio nella giungla)</td>
+            <td>Siem Reap</td>
+          </tr>
+
+          <tr>
+            <td>7</td>
+            <td>sabato 25 luglio 2026</td>
+            <td></td>
+            <td>Phnom Kulen (cascate, River of a Thousand Lingas) e villaggi locali</td>
+            <td>Siem Reap</td>
+          </tr>
+
+          <tr>
+            <td>8</td>
+            <td>domenica 26 luglio 2026</td>
+            <td></td>
+            <td>Tonle Sap (Kompong Khleang/Phluk) al mattino; pomeriggio Kulen Elephant Forest o visita a santuario etico</td>
+            <td>Siem Reap</td>
+          </tr>
+
+          <tr>
+            <td>9</td>
+            <td>lunedì 27 luglio 2026</td>
+            <td>Volo SAI‑BKK‑USM. Auto a noleggio</td>
+            <td>Trasferimento</td>
+            <td>Koh Samui</td>
+          </tr>
+
+          <tr>
+            <td>10</td>
+            <td>martedì 28 luglio 2026</td>
+            <td>Auto a noleggio</td>
+            <td>Giornata di mare</td>
+            <td>Koh Samui</td>
+          </tr>
+
+          <tr>
+            <td>11</td>
+            <td>mercoledì 29 luglio 2026</td>
+            <td>Auto a noleggio</td>
+            <td>Opzionale: escursione giornaliera ad Ang Thong Marine Park</td>
+            <td>Koh Samui</td>
+          </tr>
+
+          <tr>
+            <td>12</td>
+            <td>giovedì 30 luglio 2026</td>
+            <td>Auto a noleggio</td>
+            <td>Giornata di mare</td>
+            <td>Koh Samui</td>
+          </tr>
+
+          <tr>
+            <td>13</td>
+            <td>venerdì 31 luglio 2026</td>
+            <td>Auto a noleggio</td>
+            <td>Opzionale: Jungle Safari; Na Muang Waterfall; incontro elefanti etico</td>
+            <td>Koh Samui</td>
+          </tr>
+
+          <tr>
+            <td>14</td>
+            <td>sabato 1 agosto 2026</td>
+            <td>Auto a noleggio. Volo USM‑BKK</td>
+            <td>Mattinata di mare e checkout</td>
+            <td>Bangkok</td>
+          </tr>
+
+          <tr>
+            <td>15</td>
+            <td>domenica 2 agosto 2026</td>
+            <td>Volo BKK‑MXP</td>
+            <td>Arrivo</td>
+            <td>-</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
   </div>
 </body>
 </html>
