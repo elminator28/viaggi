@@ -15,12 +15,15 @@
   <title>Thailandia e Cambogia</title>
   <style>
     :root{--accent:#00695c;--bg:#f7f7f8;--card:#fff;--muted:#666}
-    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;margin:0;padding:0;background:var(--bg);color:#111}
-    .wrap{max-width:920px;margin:0 auto;padding:18px}
+    *{box-sizing:border-box}
+    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;margin:0;padding:0;background:var(--bg);color:#111;line-height:1.5}
+    .wrap{max-width:920px;margin:0 auto;padding:16px 14px 22px}
     header{background:var(--accent);color:#fff;padding:14px;border-radius:8px}
-    h1{font-size:18px;margin:0}
-    section{background:var(--card);border-radius:8px;padding:12px;margin-top:12px;box-shadow:0 1px 2px rgba(0,0,0,0.06)}
-    table{width:100%;border-collapse:collapse;font-size:15px;table-layout:auto}
+    h1{font-size:20px;margin:0}
+    h2{font-size:18px;margin:8px 0 12px}
+    section{background:var(--card);border-radius:8px;padding:12px;margin-top:14px;box-shadow:0 1px 2px rgba(0,0,0,0.06)}
+    .table-wrapper{overflow-x:auto;-webkit-overflow-scrolling:touch}
+    table{width:100%;min-width:520px;border-collapse:collapse;font-size:15px;table-layout:auto}
     th,td{padding:10px 8px;border-bottom:1px solid #eee;text-align:left;vertical-align:top}
     th{background:#f1f6f5;font-weight:700}
     a{color:var(--accent);word-break:break-word}
@@ -37,12 +40,18 @@
       white-space:normal;
     }
     @media (max-width:720px){
+      .wrap{padding:14px 10px 18px}
+      h1{font-size:18px}
+      table{min-width:480px}
       thead th:nth-child(2), tbody td:nth-child(2){width:45%}
       thead th:nth-child(4), tbody td:nth-child(4){width:40%}
     }
-    @media (max-width:420px){
+    @media (max-width:520px){
+      .wrap{padding:10px 8px 14px}
       h1{font-size:16px}
+      h2{font-size:15px}
       th,td{padding:8px 6px;font-size:14px}
+      table{min-width:420px}
     }
   </style>
 </head>
@@ -54,6 +63,7 @@
 
     <section aria-labelledby="voli">
       <h2 id="voli" style="font-size:16px;margin:8px 0">Voli</h2>
+      <div class="table-wrapper">
       <table role="table" aria-label="Voli">
         <thead>
           <tr>
@@ -95,10 +105,12 @@
           </tr>
         </tbody>
       </table>
+      </div>
     </section>
 
     <section aria-labelledby="giorni">
       <h2 id="giorni" style="font-size:16px;margin:8px 0">Giorno per giorno</h2>
+      <div class="table-wrapper">
       <table role="table" aria-label="Tabella itinerario">
         <thead>
           <tr>
@@ -239,9 +251,11 @@
           </tr>
         </tbody>
       </table>
+      </div>
     </section>
     <section aria-labelledby="Hotel">
       <h2 id="Hotel" style="font-size:16px;margin:8px 0">Hotel</h2>
+      <div class="table-wrapper">
       <table role="table" aria-label="Tabella hotel">
         <thead>
           <tr>
@@ -278,6 +292,7 @@
           </tr>
         </tbody>
       </table>
+      </div>
     </section>
   </div>
 </body>
