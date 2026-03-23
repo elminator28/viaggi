@@ -13,6 +13,204 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Thailandia e Cambogia</title>
+  <style>
+    :root {
+      --accent: #1976D2;
+      --bg: #f7f7f8;
+      --card: #fff;
+      --muted: #666;
+      --border: #eee;
+      --shadow: rgba(0,0,0,0.06);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: var(--bg);
+      color: #111;
+      line-height: 1.5;
+      font-size: 16px;
+    }
+
+    .wrap {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 20px 16px 30px;
+    }
+
+    header {
+      background: var(--accent);
+      color: #fff;
+      padding: 16px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 24px;
+      margin: 0;
+      font-weight: 600;
+    }
+
+    h2 {
+      font-size: 20px;
+      margin: 12px 0 16px;
+      font-weight: 600;
+      color: var(--accent);
+    }
+
+    section {
+      background: var(--card);
+      border-radius: 8px;
+      padding: 16px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 4px var(--shadow);
+    }
+
+    .table-wrapper {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      border-radius: 4px;
+    }
+
+    table {
+      width: 100%;
+      min-width: 600px;
+      border-collapse: collapse;
+      font-size: 16px;
+      table-layout: auto;
+      margin: 0;
+    }
+
+    th, td {
+      padding: 12px 8px;
+      border-bottom: 1px solid var(--border);
+      text-align: left;
+      vertical-align: top;
+    }
+
+    th {
+      background: #f1f6f5;
+      font-weight: 600;
+      color: var(--accent);
+    }
+
+    tbody tr:hover {
+      background: #f9f9f9;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+      word-break: break-word;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .muted {
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    ul {
+      margin: 12px 0;
+      padding-left: 20px;
+    }
+
+    li {
+      margin: 8px 0;
+    }
+
+    /* Mobile Styles */
+    @media (max-width: 768px) {
+      .wrap {
+        padding: 16px 12px 24px;
+      }
+
+      header {
+        padding: 14px;
+        margin-bottom: 16px;
+      }
+
+      h1 {
+        font-size: 20px;
+      }
+
+      h2 {
+        font-size: 18px;
+        margin: 10px 0 14px;
+      }
+
+      section {
+        padding: 14px;
+        margin-bottom: 16px;
+      }
+
+      table {
+        min-width: 500px;
+        font-size: 14px;
+      }
+
+      th, td {
+        padding: 10px 6px;
+      }
+
+      thead th:nth-child(2),
+      tbody td:nth-child(2) {
+        width: 45%;
+      }
+
+      thead th:nth-child(4),
+      tbody td:nth-child(4) {
+        width: 40%;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .wrap {
+        padding: 12px 8px 20px;
+      }
+
+      header {
+        padding: 12px;
+      }
+
+      h1 {
+        font-size: 18px;
+      }
+
+      h2 {
+        font-size: 16px;
+        margin: 8px 0 12px;
+      }
+
+      section {
+        padding: 12px;
+        margin-bottom: 14px;
+      }
+
+      table {
+        min-width: 400px;
+        font-size: 13px;
+      }
+
+      th, td {
+        padding: 8px 4px;
+      }
+
+      ul, li {
+        font-size: 14px;
+      }
+    }
+  </style>
 </head>
 <body>
   <div class="wrap">
